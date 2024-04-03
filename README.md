@@ -16,7 +16,7 @@
     unzip data/vg_gqa_imgfeat/vg_gqa_obj36.zip -d data && rm data/vg_gqa_imgfeat/vg_gqa_obj36.zip
     wget https://nlp.cs.unc.edu/data/lxmert_data/vg_gqa_imgfeat/gqa_testdev_obj36.zip -P data/vg_gqa_imgfeat
     unzip data/vg_gqa_imgfeat/gqa_testdev_obj36.zip -d data && rm data/vg_gqa_imgfeat/gqa_testdev_obj36.zip
-  * cd src then call **python3 main_feats.py --train=train** 
+  * cd src then call python3 main_feats.py --train=train
   * The *src* files content is from https://github.com/airsplay/lxmert wth some modifications.
 
 #### Generator training:
@@ -32,9 +32,9 @@ Inputs: the generator gets question/layout pairs as training data.
   * The *train* function loops over the train_epoch function in order to train the model for several epochs, save the checkpoints and plots.
   * The *evaluate* function runs a forward pass on the model without backprobagation, useful for printing the outputs of some examples or evaluating the outcome of a specific epoch.
   * The *main* is at the end of the file, we use it to call the train or the evaluate methods, examples are provided in the file.
-  * To run the *transformer.py* from scratch call: **python3 transformer.py --train=train --data_path=_ --transformer_save=_ --transformer_lr=0.1 --transformer_start=0  --transformer_path=""
-  * To resume training from a previous epoch call: **python3 transformer.py --train=train --data_path=_ --transformer_save=_ --transformer_lr=0.1 --transformer_start=100  --transformer_path="--data_path=_/transformer_100.pth"
-  * *--train*: the dataset to use: train, validation or testdev.
+  * To run the *transformer.py* from scratch call: python3 transformer.py --train=train --data_path=_ --transformer_save=_ --transformer_lr=0.1 --transformer_start=0  --transformer_path=""
+  * To resume training from a previous epoch call: python3 transformer.py --train=train --data_path=_ --transformer_save=_ --transformer_lr=0.1 --transformer_start=100  --transformer_path="--data_path=_/transformer_100.pth"
+  * --train: the dataset to use: train, validation or testdev.
   
 #### Executor training:
   
